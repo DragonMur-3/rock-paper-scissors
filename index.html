@@ -7,24 +7,83 @@
 </head>
 <body>
     <script>
+        let playerScore=0;
+        let computerScore=0;
+        let draw=0;
+        let playerWins="Player wins this round";
+        let computerWins="Computer wins this round";
+        let drawn="Draw";
+        
         function getComputerChoice (){
             let choice = Math.floor(Math.random() * 10);
-            console.log(choice);
+            
             if (choice <= 3)
             {
-                choice= 'Rock';
+                choice= 'rock';
             }
             else if (choice <= 6)
             {
-                choice = 'Scissors';
+                choice = 'scissors';
             }
             else if(choice <= 9)
             {
-                choice = 'Paper';
+                choice = 'paper';
             }
             return choice;  
         } 
-       console.log(getComputerChoice());
+       function playRound(playerSelection, computerSelection) {
+        if (playerSelection==='rock' && computerSelection==='scissors'){
+            playerScore++;
+            return playerWins;
+
+        }
+        if (playerSelection==='rock' && computerSelection==='paper'){
+            computerScore++
+            return computerWins;
+        }
+        if (playerSelection==='paper' && computerSelection==='scissors'){
+            computerScore++
+            return computerWins;
+        }
+        if (playerSelection==='paper' && computerSelection==='rock'){
+            playerScore++;
+            return playerWins;
+        }
+        if (playerSelection==='scissors' && computerSelection==='paper'){
+            playerScore++;
+            return playerWins;
+        }
+        if (playerSelection==='scissors' && computerSelection==='rock'){
+            computerScore++
+            return computerWins;
+        }
+        if (playerSelection==computerSelection){
+            draw++;
+            return drawn;
+        }
+       }
+    function game() {
+            for (let i = 0; i < 5; i++) {
+                let playerSelection = prompt("Enter Rock,Paper or Scissors").toLowerCase();
+                let computerSelection = getComputerChoice();
+                console.log(playRound(playerSelection, computerSelection));
+            }
+                console.log("The player score is" +" "+ playerScore);
+                console.log("The computer score is" +" "+ computerScore);
+                console.log("the number of times a round is drawn is"+" " + draw);
+                if(playerScore>computerScore){
+                console.log("The player has won the game");
+                }
+                else if(playerScore<computerScore){
+                console.log("the computer has won the game");
+            }
+            else{
+            console.log("the game was drawn");
+        }
+        }
+
+game();
+
     </script>
 </body>
 </html>
