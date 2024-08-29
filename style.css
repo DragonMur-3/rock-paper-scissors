@@ -1,0 +1,45 @@
+.container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 500px;
+text-align: center;
+   
+}
+
+.btnr,.btnp,.btns{
+
+   margin: 0;
+   border: 0;
+   background-color: rgb(196, 255, 245);
+ 
+}
+.results{
+    display: flex;
+    justify-content: space-evenly;
+}
+body{
+    background-color: rgb(196, 255, 245);
+}
+
+img{
+    width: 300px;
+    height:300px;
+    background-color: rgb(196, 255, 245);
+}
+.round_result{
+    text-align: center;
+    font-size: 25px;
+    
+}
+.winner_results{
+    text-align: center;
+    font-size: 30px;
+    color: black;
+}
+h1{
+    margin: 0px;
+}
+.player_score, .computer_score, .draw_score{
+    font-size: 20px;
+}
